@@ -50,58 +50,58 @@ spring:
   profiles:
     active: dev
   #数据源，一主两从，读写分离     +++++++改用当当开源的sharding-jdbc，此配置暂不使用，后续有需要再放开+++++++++++++=
-  #  datasource:
-  #    master:
-  #      jdbc-url: jdbc:mysql://47.106.212.169:3307/frame_admin?useUnicode=true&amp;characterEncoding=utf8&amp;emptyStringsConvertToZero=true
-  #      username: root
-  #      password: root
-  #      driver-class-name: com.mysql.jdbc.Driver
-  #      type: com.alibaba.druid.pool.DruidDataSource
+#  datasource:
+#    master:
+#      jdbc-url: jdbc:mysql://47.106.212.169:3307/frame_admin?useUnicode=true&amp;characterEncoding=utf8&amp;emptyStringsConvertToZero=true
+#      username: root
+#      password: root
+#      driver-class-name: com.mysql.jdbc.Driver
+#      type: com.alibaba.druid.pool.DruidDataSource
 
-  #      max-active: 20
-  #      initial-size: 1
-  #      min-idle: 3
-  #      max-wait: 600
-  #      time-between-eviction-runs-millis: 60000
-  #      min-evictable-idle-time-millis: 300000
-  #      test-while-idle: true
-  #      test-on-borrow: false
-  #      test-on-return: false
-  #      poolPreparedStatements: true
-  #    slave1:
-  #      jdbc-url: jdbc:mysql://47.106.212.169:3308/frame_admin?useUnicode=true&amp;characterEncoding=utf8&amp;emptyStringsConvertToZero=true
-  #      username: onlyselect
-  #      password: 123456
-  #      driver-class-name: com.mysql.jdbc.Driver
-  #      type: com.alibaba.druid.pool.DruidDataSource
-  #
-  #      max-active: 20
-  #      initial-size: 1
-  #      min-idle: 3
-  #      max-wait: 600
-  #      time-between-eviction-runs-millis: 60000
-  #      min-evictable-idle-time-millis: 300000
-  #      test-while-idle: true
-  #      test-on-borrow: false
-  #      test-on-return: false
-  #      poolPreparedStatements: true
-  #    slave2:
-  #      jdbc-url: jdbc:mysql://47.106.212.169:3309/frame_admin?useUnicode=true&amp;characterEncoding=utf8&amp;emptyStringsConvertToZero=true
-  #      username: onlyselect
-  #      password: 123456
-  #      driver-class-name: com.mysql.jdbc.Driver
-  #      type: com.alibaba.druid.pool.DruidDataSource
+#      max-active: 20
+#      initial-size: 1
+#      min-idle: 3
+#      max-wait: 600
+#      time-between-eviction-runs-millis: 60000
+#      min-evictable-idle-time-millis: 300000
+#      test-while-idle: true
+#      test-on-borrow: false
+#      test-on-return: false
+#      poolPreparedStatements: true
+#    slave1:
+#      jdbc-url: jdbc:mysql://47.106.212.169:3308/frame_admin?useUnicode=true&amp;characterEncoding=utf8&amp;emptyStringsConvertToZero=true
+#      username: onlyselect
+#      password: 123456
+#      driver-class-name: com.mysql.jdbc.Driver
+#      type: com.alibaba.druid.pool.DruidDataSource
+#
+#      max-active: 20
+#      initial-size: 1
+#      min-idle: 3
+#      max-wait: 600
+#      time-between-eviction-runs-millis: 60000
+#      min-evictable-idle-time-millis: 300000
+#      test-while-idle: true
+#      test-on-borrow: false
+#      test-on-return: false
+#      poolPreparedStatements: true
+#    slave2:
+#      jdbc-url: jdbc:mysql://47.106.212.169:3309/frame_admin?useUnicode=true&amp;characterEncoding=utf8&amp;emptyStringsConvertToZero=true
+#      username: onlyselect
+#      password: 123456
+#      driver-class-name: com.mysql.jdbc.Driver
+#      type: com.alibaba.druid.pool.DruidDataSource
 
-  #      max-active: 20
-  #      initial-size: 1
-  #      min-idle: 3
-  #      max-wait: 600
-  #      time-between-eviction-runs-millis: 60000
-  #      min-evictable-idle-time-millis: 300000
-  #      test-while-idle: true
-  #      test-on-borrow: false
-  #      test-on-return: false
-  #      poolPreparedStatements: true
+#      max-active: 20
+#      initial-size: 1
+#      min-idle: 3
+#      max-wait: 600
+#      time-between-eviction-runs-millis: 60000
+#      min-evictable-idle-time-millis: 300000
+#      test-while-idle: true
+#      test-on-borrow: false
+#      test-on-return: false
+#      poolPreparedStatements: true
 
   redis:
     cluster:
