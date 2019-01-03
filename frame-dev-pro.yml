@@ -136,15 +136,7 @@ mybatis-plus:
     cache-enabled: false
     jdbc-type-for-null: null
 #日志配置文件
-#---
-#spring:
-#  profiles: dev
-#logging:
-#  config: classpath:logConfig/logback-dev.xml
-#---
-#spring:
-#  profiles: prd
-#logging:
-#  config: classpath:logConfig/logback-prd.xml
+logging:
+  config: classpath:logConfig/logback-prd.xml
 
 

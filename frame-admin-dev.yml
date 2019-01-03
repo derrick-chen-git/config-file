@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 8120
 
 eureka:
   client:
@@ -139,14 +139,5 @@ pagehelper:
 
 
 #日志配置文件
----
-spring:
-  profiles: dev
 logging:
   config: classpath:logConfig/logback-dev.xml
----
-spring:
-  profiles: prd
-logging:
-  config: classpath:logConfig/logback-prd.xml
-
