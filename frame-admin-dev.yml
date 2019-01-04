@@ -11,7 +11,7 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 15
-    instance-id: ${spring.application.name}:${server.port}
+    #instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true
   healthcheck:
     enabled: true
