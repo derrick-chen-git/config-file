@@ -145,6 +145,6 @@ xxl-job:
     executor:
       appname: ${spring.application.name}
       port: ${xxl.job.executor.port}
-      ip: ${eureka.instance.ip-address}
+      ip:
       logpath: /Users/lemonade/code/logs/
       logretentiondays: -1
