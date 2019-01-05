@@ -139,5 +139,15 @@ mybatis-plus:
 logging:
   config: classpath:logConfig/logback-dev.xml
 
+#xxl-job
+xxl-job:
+    adminAddress: http://47.106.212.169:8190/xxl-job-admin
+    accessToken:
+    executor:
+      appname: ${spring.application.name}
+      port: 18110
+      ip:
+      logpath: /Users/lemonade/code/logs/
+      logretentiondays: -1
 
 
