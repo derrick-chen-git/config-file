@@ -55,40 +55,41 @@ spring:
       password: derrick
       virtual-host: my_vhost
 
-  cloud:
-    stream:
-      binders: # 在此处配置要绑定的rabbitmq的服务信息；
-        defaultRabbit: # 表示定义的名称，用于于binding整合
-          type: rabbit # 消息组件类型
-      bindings:
-        test1-input: # 通道
-          destination: test1-exchange # Exchange
-          content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
-          binder: defaultRabbit # 设置要绑定的消息服务的具体设置
-          group: frame-dev #消费分组
-        test2-input: # 通
-          destination: test1-exchange # Exchange
-          content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
-          binder: defaultRabbit # 设置要绑定的消息服务的具体设置
-          group: frame-dev2 #消费分组
-      rabbit:
-        bindings:
-          test1-input:
-            consumer:
-              maxAttempts: 3
-              bindingRoutingKey: addProduct.*      # 默认为#，如果是动态binding模式，producer发送的routingKey 默认为destination
-              acknowledge-mode: manual
-              autoBindDlq: true #启用死信队列，默认会生成一个DLX EXCHANGE，当消息重复消费失败后
-              dlqDeadLetterExchange: test1-input-deadLetter.DLX  #如果该列声明，那么deadLetterExchange也要声明，这个保持一致
-              deadLetterExchange: test1-input-deadLetter.DLX #与dlqDeadLetterExchange保持一致
-              requeueRejected: true #默认false，只能抛AmqpRejectAndDontRequeueException消息才能到死信队列，如果为true，所有错误消息都会抛到死信队列
-              republishToDlq: true #该值为false如果设置了死信队列，消息对原封不动的发送到死信队列，如果为true，则消息对带上错误信息发送至死信队列
-              deadLetterQueueName: test1-input-deadLetter.dlq
+#+++++++++++++++++++spring cloud stream +++++++++++++++++++++++++++++
+#  cloud:
+#    stream:
+#      binders: # 在此处配置要绑定的rabbitmq的服务信息；
+#        defaultRabbit: # 表示定义的名称，用于于binding整合
+#          type: rabbit # 消息组件类型
+#      bindings:
+#        test1-input: # 通道
+#          destination: test1-exchange # Exchange
+#          content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
+#          binder: defaultRabbit # 设置要绑定的消息服务的具体设置
+#          group: frame-dev #消费分组
+#        test2-input: # 通
+#          destination: test1-exchange # Exchange
+#          content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
+#          binder: defaultRabbit # 设置要绑定的消息服务的具体设置
+#          group: frame-dev2 #消费分组
+#      rabbit:
+#        bindings:
+#          test1-input:
+#            consumer:
+#              maxAttempts: 3
+#              bindingRoutingKey: addProduct.*      # 默认为#，如果是动态binding模式，producer发送的routingKey 默认为destination
+#              acknowledge-mode: manual
+#              autoBindDlq: true #启用死信队列，默认会生成一个DLX EXCHANGE，当消息重复消费失败后
+#              dlqDeadLetterExchange: test1-input-deadLetter.DLX  #如果该列声明，那么deadLetterExchange也要声明，这个保持一致
+#              deadLetterExchange: test1-input-deadLetter.DLX #与dlqDeadLetterExchange保持一致
+#              requeueRejected: true #默认false，只能抛AmqpRejectAndDontRequeueException消息才能到死信队列，如果为true，所有错误消息都会抛到死信队列
+#              republishToDlq: true #该值为false如果设置了死信队列，消息对原封不动的发送到死信队列，如果为true，则消息对带上错误信息发送至死信队列
+#              deadLetterQueueName: test1-input-deadLetter.dlq
                 #prefix: feign-test2 #声明exchange、queue前缀
 
-          test2-input:
-            consumer:
-              bindingRoutingKey: Product.*
+#          test2-input:
+#            consumer:
+#              bindingRoutingKey: Product.*
 
   application:
     name: frame-dev
