@@ -142,7 +142,8 @@ logging:
 
 #xxl-job
 xxl-job:
-    adminAddress: http://47.106.212.169:8190/xxl-job-admin
+    #adminAddress: http://47.106.212.169:8190/xxl-job-admin
+    adminAddress: http://127.0.0.1:8190/xxl-job-admin
     accessToken:
     executor:
       appname: ${spring.application.name}

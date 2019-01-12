@@ -11,8 +11,8 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 15
-    instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
     prefer-ip-address: true
+    #instance-id: ${spring.application.name}-${eureka.instance.ip-address}:${server.port}
   healthcheck:
     enabled: true
 
@@ -54,7 +54,7 @@ spring:
       username: derrick
       password: derrick
       virtual-host: my_vhost
-
+      cache-size: 100
 #+++++++++++++++++++spring cloud stream +++++++++++++++++++++++++++++
 #  cloud:
 #    stream:
@@ -138,14 +138,17 @@ mybatis-plus:
     jdbc-type-for-null: null
 #日志配置文件
 logging:
-  config: classpath:logConfig/logback-prd.xml
+  config: classpath:logConfig/logback-dev.xml
 
+#xxl-job
 xxl-job:
     adminAddress: http://47.106.212.169:8190/xxl-job-admin
     accessToken:
     executor:
       appname: ${spring.application.name}
-      port: ${xxl.job.executor.port}
+      port: 18110
       ip:
-      logpath: /Users/lemonade/code/logs/
+      logpath: /data/logs/
       logretentiondays: -1
+
+
