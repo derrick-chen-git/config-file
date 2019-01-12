@@ -81,6 +81,7 @@ spring:
     username: derrick
     password: derrick
     virtual-host: my_vhost
+    cache-size: 100
 # 改为使用spring cloud stream 集成，此方式备用
 #    publisher-confirms: true
 #    publisher-returns: true
