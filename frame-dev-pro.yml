@@ -147,7 +147,7 @@ xxl-job:
     executor:
       appname: ${spring.application.name}
       port: 18110
-      ip:
+      ip: 47.106.212.169
       logpath: /data/logs/
       logretentiondays: -1
 
