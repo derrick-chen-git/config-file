@@ -92,7 +92,7 @@ spring:
 #              bindingRoutingKey: Product.*
 
   application:
-    name: frame-dev
+    name: frame-user
 sharding.jdbc:
  data-sources:
      ds_master:
@@ -119,7 +119,7 @@ sharding.jdbc:
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.frame.dev.web.entity
+  type-aliases-package: com.frame.user.web.entity
   global-config:
     #refresh: true
     db-config:
